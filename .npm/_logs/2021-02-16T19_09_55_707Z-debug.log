@@ -1,0 +1,40 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'i' ]
+2 info using npm@6.14.6
+3 info using node@v12.18.3
+4 verbose npm-session 5d48c5b70a399acd
+5 silly install runPreinstallTopLevelLifecycles
+6 silly preinstall db@1.0.0
+7 info lifecycle db@1.0.0~preinstall: db@1.0.0
+8 silly install loadCurrentTree
+9 silly install readLocalPackageData
+10 timing stage:loadCurrentTree Completed in 12ms
+11 silly install loadIdealTree
+12 silly install cloneCurrentTreeToIdealTree
+13 timing stage:loadIdealTree:cloneCurrentTree Completed in 0ms
+14 silly install loadShrinkwrap
+15 timing stage:loadIdealTree:loadShrinkwrap Completed in 2ms
+16 silly install loadAllDepsIntoIdealTree
+17 silly fetchPackageMetaData error for json-server@1 request to https://registry.npmjs.org/json-server failed, reason: getaddrinfo EAI_AGAIN registry.npmjs.org
+18 silly fetchPackageMetaData error for json-server@1 request to https://registry.npmjs.org/json-server failed, reason: getaddrinfo EAI_AGAIN registry.npmjs.org
+19 timing stage:rollbackFailedOptional Completed in 5ms
+20 timing stage:runTopLevelLifecycles Completed in 10162ms
+21 silly saveTree db@1.0.0
+22 verbose type system
+23 verbose stack FetchError: request to https://registry.npmjs.org/json-server failed, reason: getaddrinfo EAI_AGAIN registry.npmjs.org
+23 verbose stack     at ClientRequest.<anonymous> (/usr/lib/node_modules/npm/node_modules/node-fetch-npm/src/index.js:68:14)
+23 verbose stack     at ClientRequest.emit (events.js:315:20)
+23 verbose stack     at TLSSocket.socketErrorListener (_http_client.js:426:9)
+23 verbose stack     at TLSSocket.emit (events.js:315:20)
+23 verbose stack     at emitErrorNT (internal/streams/destroy.js:92:8)
+23 verbose stack     at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+23 verbose stack     at processTicksAndRejections (internal/process/task_queues.js:84:21)
+24 verbose cwd /app/backend
+25 verbose Linux 5.4.0-65-generic
+26 verbose argv "/usr/bin/node" "/usr/bin/npm" "i"
+27 verbose node v12.18.3
+28 verbose npm  v6.14.6
+29 error code EAI_AGAIN
+30 error errno EAI_AGAIN
+31 error request to https://registry.npmjs.org/json-server failed, reason: getaddrinfo EAI_AGAIN registry.npmjs.org
+32 verbose exit [ 1, true ]

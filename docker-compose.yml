@@ -1,0 +1,49 @@
+version: '2'
+services:
+  backend:
+    container_name: lojas-bk
+    image: node:10.11.0-alpine
+    volumes:
+      - ${PWD}/backend:/app/backend
+    ports:
+      - 8081:3000
+    command: sh -c "cd /app/backend && npm i -g json-server && json-server db.json --host 0.0.0.0"
+
+  #frontend:
+    #container_name: lojas-ft
+    #depends_on:
+    #  - backend
+    #image: node:10.11.0-alpine
+    #volumes:
+    #  - ./frontend:/frontend
+    #ports:
+    #  - 8082:4200
+    #command: sh -c "cd /frontend && npm i && npm audit fix && ./node_modules/.bin/ng s --host=0.0.0.0"
+
+
+  frontend:
+    container_name: lojas-ft
+    image: egito/angular
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Fortaleza
+      - PASSWORD=password #optional
+      - SUDO_PASSWORD=password #optional
+      - PROXY_DOMAIN=egito.ddns.net #optional
+    volumes:
+      - ${PWD}/:/app
+      - /dev/bus/usb:/dev/bus/usb
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - /usr/share/code/:/usr/share/code
+      - ${PWD}/.config/:/app/.config
+      - ${PWD}/frontend:/app/frontend
+    ports:
+      - 8443:443
+      - 8200:4200
+    working_dir: /app/frontend
+    restart: unless-stopped
+    #user: egito
+    #command: ["bundle","exec","su","egito","/bin/ash"]
+    #command: sh -c "cd /frontend && npm i && npm audit fix && ./node_modules/.bin/ng s --host=0.0.0.0"
+

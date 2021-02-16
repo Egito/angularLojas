@@ -1,0 +1,9 @@
+<div class="form-group" [class.has-success]="comSucesso()"
+                        [class.has-error]="temErros()">
+  <label class="control-label sr-only" for="inputSuccess"><i class="fa fa-check"></i> {{label}}</label>
+
+  <ng-content autocomplete="off" ></ng-content>
+  
+  <span class="help-block" *ngIf="comSucesso()"><i class="fa fa-check"> Ok</i></span>
+  <span class="help-block" *ngIf="temErros()"><i class="fa fa-remove"> {{erroMensagem}}</i></span>
+</div>

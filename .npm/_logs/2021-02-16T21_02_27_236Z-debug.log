@@ -1,0 +1,35 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'i', 'json-server' ]
+2 info using npm@6.14.6
+3 info using node@v12.18.3
+4 verbose npm-session b4377fc49eaf9c83
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 http fetch GET 200 https://registry.npmjs.org/json-server 239ms
+8 silly fetchPackageMetaData error for json-server@1 No matching version found for json-server@1.
+9 timing stage:rollbackFailedOptional Completed in 2ms
+10 timing stage:runTopLevelLifecycles Completed in 294ms
+11 verbose type range
+12 verbose stack json-server: No matching version found for json-server@1.
+12 verbose stack     at pickManifest (/usr/lib/node_modules/npm/node_modules/npm-pick-manifest/index.js:122:13)
+12 verbose stack     at /usr/lib/node_modules/npm/node_modules/pacote/lib/fetchers/registry/manifest.js:24:14
+12 verbose stack     at tryCatcher (/usr/lib/node_modules/npm/node_modules/bluebird/js/release/util.js:16:23)
+12 verbose stack     at Promise._settlePromiseFromHandler (/usr/lib/node_modules/npm/node_modules/bluebird/js/release/promise.js:517:31)
+12 verbose stack     at Promise._settlePromise (/usr/lib/node_modules/npm/node_modules/bluebird/js/release/promise.js:574:18)
+12 verbose stack     at Promise._settlePromise0 (/usr/lib/node_modules/npm/node_modules/bluebird/js/release/promise.js:619:10)
+12 verbose stack     at Promise._settlePromises (/usr/lib/node_modules/npm/node_modules/bluebird/js/release/promise.js:699:18)
+12 verbose stack     at _drainQueueStep (/usr/lib/node_modules/npm/node_modules/bluebird/js/release/async.js:138:12)
+12 verbose stack     at _drainQueue (/usr/lib/node_modules/npm/node_modules/bluebird/js/release/async.js:131:9)
+12 verbose stack     at Async._drainQueues (/usr/lib/node_modules/npm/node_modules/bluebird/js/release/async.js:147:5)
+12 verbose stack     at Immediate.Async.drainQueues [as _onImmediate] (/usr/lib/node_modules/npm/node_modules/bluebird/js/release/async.js:17:14)
+12 verbose stack     at processImmediate (internal/timers.js:456:21)
+13 verbose cwd /app/backend
+14 verbose Linux 5.4.0-65-generic
+15 verbose argv "/usr/bin/node" "/usr/bin/npm" "i" "json-server"
+16 verbose node v12.18.3
+17 verbose npm  v6.14.6
+18 error code ETARGET
+19 error notarget No matching version found for json-server@1.
+20 error notarget In most cases you or one of your dependencies are requesting
+20 error notarget a package version that doesn't exist.
+21 verbose exit [ 1, true ]

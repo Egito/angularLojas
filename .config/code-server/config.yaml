@@ -1,0 +1,4 @@
+bind-addr: 0.0.0.0:443
+auth: none
+password: 5cba8e10cb9c2bfc377a50ff
+cert: true
