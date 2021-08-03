@@ -1,0 +1,49 @@
+version: "3.3"
+
+services: 
+  web:
+    image: ghcr.io/linuxserver/code-server
+    volumes:
+      - ${HOME}/config:/config
+      - ${HOME}/:/code
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Fortaleza
+      - PASSWORD=salvador #optional
+#      - HASHED_PASSWORD= #optional
+      - SUDO_PASSWORD=egito #optional
+      - SUDO_PASSWORD_HASH= #optional
+#      - PROXY_DOMAIN=code-server.salvador.eti
+    ports:
+      - 8444:8443
+      - 8081:4200
+    working_dir: /code
+    depends_on: 
+      - db
+    restart: unless-stopped
+
+  bk:
+    #container_name: lojas-bk
+    image: node:10.11.0-alpine
+    volumes:
+      - ${PWD}/backend:/app/backend
+    ports: 
+      - 3000:3000
+    command: sh -c "cd /app/backend && npm i -g json-server && json-server db.json --host 0.0.0.0"
+    restart: unless-stopped
+  
+  db:
+    image: postgres
+    #container_name: postgresql
+    environment: 
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres!
+    ports: 
+      - 5432:5432
+    volumes: 
+      - postgres_data:/var/lib/postgresql/data/
+
+volumes:
+  postgres_data:
+#  portainer_data:
